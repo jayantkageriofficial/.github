@@ -1,0 +1,756 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Parked!</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+
+    <style>
+        /* cyrillic-ext */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSKmu1aB.woff2) format('woff2');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+
+        /* cyrillic */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSumu1aB.woff2) format('woff2');
+            unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        /* greek-ext */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSOmu1aB.woff2) format('woff2');
+            unicode-range: U+1F00-1FFF;
+        }
+
+        /* greek */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSymu1aB.woff2) format('woff2');
+            unicode-range: U+0370-03FF;
+        }
+
+        /* hebrew */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS2mu1aB.woff2) format('woff2');
+            unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+        }
+
+        /* vietnamese */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSCmu1aB.woff2) format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        /* latin-ext */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSGmu1aB.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        /* latin */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* cyrillic-ext */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSKmu1aB.woff2) format('woff2');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+
+        /* cyrillic */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSumu1aB.woff2) format('woff2');
+            unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        /* greek-ext */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSOmu1aB.woff2) format('woff2');
+            unicode-range: U+1F00-1FFF;
+        }
+
+        /* greek */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSymu1aB.woff2) format('woff2');
+            unicode-range: U+0370-03FF;
+        }
+
+        /* hebrew */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS2mu1aB.woff2) format('woff2');
+            unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+        }
+
+        /* vietnamese */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSCmu1aB.woff2) format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        /* latin-ext */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSGmu1aB.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        /* latin */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* devanagari */
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJbecmNE.woff2) format('woff2');
+            unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+        }
+
+        /* latin-ext */
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJnecmNE.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        /* latin */
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* devanagari */
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLGT9Z11lFc-K.woff2) format('woff2');
+            unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+        }
+
+        /* latin-ext */
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLGT9Z1JlFc-K.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        /* latin */
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+    <style>
+        html {
+            font-size: 100%;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            touch-action: manipulation
+        }
+
+        body {
+            font-size: 16px;
+            font-family: open sans, sans-serif;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            word-wrap: break-word;
+            overflow-x: hidden;
+            color: #333
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        a,
+        ul,
+        span,
+        li,
+        img,
+        input,
+        button {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            user-select: none;
+            pointer-events: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            line-height: 1.5;
+            font-weight: inherit
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: poppins, sans-serif
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.05em;
+            font-weight: 400;
+            color: #555
+        }
+
+        h1 {
+            font-size: 3.5em;
+            line-height: 1
+        }
+
+        h2 {
+            font-size: 3em;
+            line-height: 1.1
+        }
+
+        h3 {
+            font-size: 2.5em
+        }
+
+        h4 {
+            font-size: 1.5em
+        }
+
+        h5 {
+            font-size: 1.2em
+        }
+
+        h6 {
+            font-size: .9em;
+            letter-spacing: 1px
+        }
+
+        a,
+        button {
+            display: inline-block;
+            text-decoration: none;
+            color: inherit;
+            transition: all .3s;
+            line-height: 1
+        }
+
+        a:focus,
+        a:active,
+        a:hover,
+        button:focus,
+        button:active,
+        button:hover,
+        a b.light-color:hover {
+            text-decoration: none;
+            color: #e45f74
+        }
+
+        b {
+            font-weight: 500
+        }
+
+        img {
+            width: 100%
+        }
+
+        li {
+            list-style: none;
+            display: inline-block
+        }
+
+        span {
+            display: inline-block
+        }
+
+        button {
+            outline: 0;
+            border: 0;
+            background: 0 0;
+            cursor: pointer
+        }
+
+        b.light-color {
+            color: #444
+        }
+
+        .icon {
+            font-size: 1.1em;
+            display: inline-block;
+            line-height: inherit
+        }
+
+        [class^=icon-]:before,
+        [class*=" icon-"]:before {
+            line-height: inherit
+        }
+
+        html {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        *,
+        *::before,
+        *::after {
+            -webkit-box-sizing: inherit;
+            box-sizing: inherit
+        }
+
+        .center-text {
+            text-align: center
+        }
+
+        .display-table {
+            display: table;
+            height: 100%;
+            width: 100%
+        }
+
+        .display-table-cell {
+            display: table-cell;
+            vertical-align: middle
+        }
+
+        ::-webkit-input-placeholder {
+            font-size: .9em;
+            letter-spacing: 1px
+        }
+
+        ::-moz-placeholder {
+            font-size: .9em;
+            letter-spacing: 1px
+        }
+
+        :-ms-input-placeholder {
+            font-size: .9em;
+            letter-spacing: 1px
+        }
+
+        :-moz-placeholder {
+            font-size: .9em;
+            letter-spacing: 1px
+        }
+
+        .full-height {
+            height: 100%
+        }
+
+        .position-static {
+            position: static
+        }
+
+        .font-white {
+            color: #fff
+        }
+
+        .main-area {
+            position: relative;
+            height: 100vh;
+            background: #0c0d0f;
+            color: #fff;
+        }
+
+        .left-section {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 50%;
+            background-size: cover;
+            background-color: white;
+            overflow-y: hidden;
+        }
+
+        .right-section {
+            float: right;
+            width: 50%;
+            position: relative;
+            padding: 0 60px
+        }
+
+        .right-section .logo {
+            position: absolute;
+            top: 40px;
+            height: 50px;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .right-section .logo img {
+            height: 100%;
+            width: auto;
+            border-radius: 9999px;
+        }
+
+        .right-section .main-content {
+            padding: 40px 40px 40px 0
+        }
+
+        .main-content .title {
+            margin-bottom: 15px
+        }
+
+        .main-content .desc {
+            color: #eee
+        }
+
+        .main-content .email-input-area {
+            margin: 40px 0 20px;
+            position: relative;
+            width: 400px;
+            height: 47px
+        }
+
+        .main-content .email-input-area .email-input {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+            border: 0;
+            outline: 0;
+            padding: 0 140px 0 25px;
+            transition: all .2s;
+            background: #f1f2f3;
+            box-shadow: inset 0 0 1px rgba(0, 0, 0, .1);
+            border: 1px solid transparent
+        }
+
+        .main-content .email-input-area .email-input:focus {
+            border-color: #f89fbc
+        }
+
+        .main-content .email-input-area .submit-btn {
+            width: 120px;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            font-size: .9em;
+            outline: 0;
+            border-radius: 0 2px 2px 0;
+            transition: all .3s;
+            background: #f84982;
+            color: #fff
+        }
+
+        .main-content .email-input-area .submit-btn:hover {
+            background: #e40b52
+        }
+
+        .main-content .post-desc {
+            color: #999;
+            padding-top: 14px;
+        }
+
+        .main-content .post-desc:hover {
+            text-decoration: none;
+            color: #e45f74
+        }
+
+        .right-section .footer-icons {
+            position: absolute;
+            bottom: 30px
+        }
+
+        .right-section .footer-icons>li>a {
+            display: inline-block;
+            font-size: 1.07em;
+            padding: 0 0
+        }
+
+        .right-section .footer-icons>li:first-child {
+            margin-right: 10px
+        }
+
+        .right-section .footer-icons>li>a>i {
+            display: inline-block;
+            height: 35px;
+            line-height: 33px;
+            transition: all .2s;
+            border-radius: 40px;
+            text-align: center;
+            width: 35px
+        }
+
+        .right-section .footer-icons>li>a:hover>i {
+            border: 1px solid
+        }
+
+        .right-section .footer-icons>li>a>i[class*=facebook] {
+            color: #2a61d6;
+            border-color: #2a61d6
+        }
+
+        .right-section .footer-icons>li>a>i[class*=twitter] {
+            color: #3aa4f8;
+            border-color: #3aa4f8
+        }
+
+        .right-section .footer-icons>li>a>i[class*=google] {
+            color: #f43846;
+            border-color: #f43846
+        }
+
+        .right-section .footer-icons>li>a>i[class*=instagram] {
+            color: #8f614a;
+            border-color: #8f614a
+        }
+
+        .right-section .footer-icons>li>a>i[class*=pinterest] {
+            color: #e1c013;
+            border-color: #e1c013
+        }
+    </style>
+    <style>
+        @media only screen and (max-width:1200px) {
+            .date-countdown {
+                width: 100%
+            }
+        }
+
+        @media only screen and (max-width:992px) {
+            .main-area {
+                position: relative;
+                /* height: 200vh */
+            }
+
+            .right-section {
+                float: none;
+                width: 100%;
+                height: 50%
+            }
+
+            .right-section .main-content {
+                padding: 40px 0
+            }
+
+            .main-content .email-input-area {
+                width: 100%
+            }
+
+            .main-content .email-input-area .email-input {
+                padding: 0 115px 0 20px
+            }
+
+            .main-content .email-input-area .submit-btn {
+                width: 80px
+            }
+
+            .right-section .footer-icons>li>a>i {
+                height: 30px;
+                line-height: 28px;
+                width: 30px
+            }
+
+            .left-section {
+                position: static;
+                width: 100%;
+            }
+
+            .date-countdown {
+                width: 100%
+            }
+
+            .date-countdown .time_circles>div>h4 {
+                font-size: .7em !important
+            }
+        }
+
+        @media only screen and (max-width:767px) {
+            p {
+                line-height: 1.4
+            }
+
+            h1 {
+                font-size: 2.8em;
+                line-height: 1
+            }
+
+            h2 {
+                font-size: 2.2em;
+                line-height: 1.1
+            }
+
+            h3 {
+                font-size: 1.8em
+            }
+        }
+
+        @media only screen and (max-width:479px) {
+            body {
+                font-size: 13px
+            }
+
+            #normal-countdown .time-sec {
+                height: 100px;
+                width: 100px;
+                margin: 5%
+            }
+
+            #normal-countdown .time-sec .main-time {
+                line-height: 80px
+            }
+
+            .right-section {
+                padding: 0 30px
+            }
+        }
+
+        @media only screen and (max-width:359px) {}
+
+        @media only screen and (max-width:290px) {}
+    </style>
+</head>
+
+<body>
+    <div class="main-area">
+        <section class="right-section full-height">
+            <a class="logo"><img src="https://cdn.jsdelivr.net/gh/jayantkageri/Website@main/assets/jayantkageri.png"
+                    alt="Logo" /></a>
+            <div class="display-table">
+                <div class="display-table-cell">
+                    <div class="main-content">
+                        <h1 class="title"><b>PARKED!</b></h1>
+                        <p class="desc">This website is currently <b>parked</b> and managed by <b>Jayant Hegde
+                                Kageri</b></p>
+                        <a class="post-desc" href="https://links.jayantkageri.in/web">Go to jayantkageri.in</a>
+                    </div>
+                </div>
+            </div>
+            <ul class="footer-icons">
+                <li id="ip"></li>
+            </ul>
+        </section>
+        <section class="left-section">
+            <img src="https://cdn.jsdelivr.net/gh/TelegramUsername/assets@main/parking-symbol.svg" alt="" srcset="">
+        </section>
+    </div>
+    <script>
+        var ip = document.getElementById("ip");
+        fetch("https://api.ipify.org/?format=json")
+            .then(response => response.json())
+            .then(data => ip.innerHTML = `Your IP Address: <code>${data.ip}</code>`);
+    </script>
+</body>
+
+</html>
